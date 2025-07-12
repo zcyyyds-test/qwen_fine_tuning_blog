@@ -229,7 +229,7 @@ trainer = SFTTrainer(
 trainer.train()
 
 # 最終的なアダプターモデルを保存
-trainer.save_model("./results_qwen2_coder_sft_guide_v2/final_checkpoint")
+trainer.save_model("./results_qwen2_coder_sft_guide/final_checkpoint")
 ```
 
 ### 3.2. 推論 (`inference.py`)
@@ -244,7 +244,7 @@ from peft import PeftModel
 
 # --- パス設定 ---
 base_model_path = "./Qwen/Qwen2___5-Coder-7B-Instruct"
-adapter_path = "./results_qwen2_coder_sft_guide_v2/final_checkpoint"
+adapter_path = "./results_qwen2_coder_sft_guide/final_checkpoint"
 
 # --- 1. ベースモデルを4-bitでロード ---
 # (fine_tuning.pyと同じbnb_configを使用)
